@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen">
+    <header class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-lg font-semibold">OFX</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <% if (user) { %>
+                    <li><a href="/products" class="hover:text-gray-300">Products</a></li>
+                    <li><a href="/add-product" class="hover:text-gray-300">Add Product</a></li>
+                    <li><a href="/logout" class="hover:text-gray-300">Logout</a></li>
+                    <% } else { %>
+                        <% if (path === '/login') { %>
+                            <li><a href="/register" class="hover:text-gray-300">Register</a></li>
+                        <% } else { %>
+                            <li><a href="/login" class="hover:text-gray-300">Login</a></li>
+                        <% } %>
+                    <% } %>
+                </ul>                
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto py-6 px-4 flex-grow">
+        <%- body %>
+    </main>
+    <footer class="bg-gray-800 text-white text-center py-4 mt-auto">
+        <p>&copy; 2024 OFX. All rights reserved.</p>
+    </footer>
+</body>
+</html>

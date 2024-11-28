@@ -1,0 +1,8 @@
+# ignorar database.db
+database.db
+
+# ignorar .env
+.env
+
+# ignorar node_modules
+node_modules

@@ -1,0 +1,17 @@
+<!-- views/partials/header.ejs -->
+<nav class="p-4 bg-blue-500 text-white">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="/products" class="text-2xl font-bold">🛍️ Emoji Marketplace</a>
+      <div>
+        <% if (user) { %>
+          <span>👤 <%= user.username %></span>
+          <a href="/add-product" class="ml-4">➕ Add Product</a>
+          <a href="/logout" class="ml-4">🚪 Logout</a>
+        <% } else { %>
+          <a href="/login">🔐 Login</a>
+          <a href="/register" class="ml-4">📝 Register</a>
+        <% } %>
+      </div>
+    </div>
+  </nav>
+  

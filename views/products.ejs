@@ -1,0 +1,26 @@
+
+<div class="container mx-auto py-6">
+    <h2 class="text-3xl font-bold mb-6">Products</h2>
+
+    <!-- Optional Error Message -->
+    <% if (typeof error !== 'undefined' && error) { %>
+        <p class="text-red-600 text-sm mb-4"><%= error %></p>
+    <% } %>
+
+    <!-- Search Bar -->
+    <form action="/search" method="GET" class="mb-6">
+        <input type="text" name="q" placeholder="Search products..." class="w-full border border-gray-300 p-2 rounded">
+    </form>
+
+    <!-- Product Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <% products.forEach(product => { %>
+            <a href="/product/<%= product.id %>" class="bg-white rounded-lg shadow-md p-4">
+                <img src="<%= product.image %>" alt="<%= product.name %>" class="w-full h-40 object-cover rounded">
+                <h3 class="text-xl font-semibold mt-4"><%= product.name %></h3>
+                <p class="text-gray-700">$<%= product.price.toFixed(2) %></p>
+                <p class="text-sm text-gray-500">Tags: <%= product.tags %></p>
+            </a>
+        <% }) %>
+    </div>
+</div>

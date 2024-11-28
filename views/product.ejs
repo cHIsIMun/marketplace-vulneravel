@@ -1,0 +1,20 @@
+<!-- views/product.ejs -->
+<h1 class="text-3xl font-bold mb-4"> <%= product.name %></h1>
+
+<div class="bg-white p-6 rounded shadow">
+  <div class="md:flex">
+    <div class="md:w-1/2">
+      <img src="<%= product.image %>" alt="<%= product.name %>" class="w-full h-64 object-cover rounded mb-4">
+    </div>
+    <div class="md:w-1/2 md:pl-6">
+      <p class="text-2xl text-gray-800 mb-2">💲 <%= product.price %></p>
+      <p class="text-sm text-gray-500 mb-4">🏷️ <%= product.tags %></p>
+      <div class="prose max-w-none">
+        <!-- Render the HTML content of the description -->
+        <%- product.description %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a href="/products" class="mt-4 inline-block text-blue-500">← Back to Products</a>
