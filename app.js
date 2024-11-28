@@ -1,4 +1,3 @@
-// app.js
 const express = require('express');
 const app = express();
 const path = require('path');
@@ -7,10 +6,10 @@ const cookieParser = require('cookie-parser');
 const expressLayouts = require('express-ejs-layouts');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const db = require('./database'); // Ensure this file exists
+const db = require('./database');
 const { authenticateToken, redirectIfAuthenticated } = require('./authMiddleware');
 
-// Load environment variables
+// Carregar variáveis de ambiente
 require('dotenv').config();
 const SECRET_KEY = process.env.JWT_SECRET;
 
@@ -19,15 +18,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(expressLayouts);
 
-// Set up EJS
+// Configurações do EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.set('layout', 'layout');
 
-// Serve static files
+// Arquivos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware to set res.locals.user
+// Middleware para verificar se o usuário está autenticado
 app.use((req, res, next) => {
   const token = req.cookies.token;
   if (token) {
@@ -117,8 +116,8 @@ app.post('/login', redirectIfAuthenticated, async (req, res) => {
     });
 
     // Store tokens in cookies
-    res.cookie('token', token, { httpOnly: true });
-    res.cookie('refreshToken', refreshToken, { httpOnly: true });
+    res.cookie('token', token);
+    res.cookie('refreshToken', refreshToken);
     res.cookie('username', user.username);
 
     // Redirect to products
