@@ -116,7 +116,6 @@ Abra o seu navegador e acesse [http://localhost:3000](http://localhost:3000) par
    - **Nome de Usuário:** Insira o nome de usuário registrado.
    - **Senha:** Insira a senha correspondente.
    
-   ![Página de Login](./public/images/login.png)
 
 3. **Entrar:**
 
@@ -129,8 +128,6 @@ Abra o seu navegador e acesse [http://localhost:3000](http://localhost:3000) par
 
    - Após fazer login, você será redirecionado para a lista de produtos.
    - Clique em "➕ Cadastrar Novo Produto" para adicionar um novo produto.
-   
-   ![Página de Cadastro de Produto](./public/images/add-product.png)
 
 2. **Preencher o Formulário de Cadastro:**
 
@@ -139,8 +136,6 @@ Abra o seu navegador e acesse [http://localhost:3000](http://localhost:3000) par
    - **Imagem:** Insira a URL de uma imagem do produto (opcional).
    - **Descrição:** Insira uma descrição para o produto. **ATENÇÃO:** Este campo aceita HTML, permitindo a injeção de scripts maliciosos.
    - **Tags:** Insira tags relacionadas ao produto, separadas por vírgulas.
-   
-   ![Formulário de Cadastro](./public/images/product-form.png)
 
 3. **Cadastrar:**
 
@@ -157,13 +152,11 @@ Abra o seu navegador e acesse [http://localhost:3000](http://localhost:3000) par
 
    - Clique no nome ou na imagem de um produto para ver seus detalhes.
    
-   ![Lista de Produtos](./public/images/products-list.png)
 
 3. **Página de Detalhes:**
 
    - Na página de detalhes, a descrição do produto será renderizada. Se contiver scripts maliciosos, eles serão executados aqui.
    
-   ![Detalhes do Produto](./public/images/product-detail.png)
 
 ### Teste de Vulnerabilidade XSS
 
@@ -180,7 +173,7 @@ Para demonstrar a vulnerabilidade de **Cross-Site Scripting (XSS)**, siga os pas
    - Preencha o formulário com os seguintes dados:
      - **Nome:** iPhone 15 Pro Max 💎
      - **Preço:** 9999.99
-     - **Imagem:** `https://via.placeholder.com/150`
+     - **Imagem:** `https://imgs.search.brave.com/PXItQGv-8OC6DZP3xIwR8NRJtjDJypOGNTiYQuvXndw/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Z29pbXBvcnRzLmNv/bS5ici9pbWFnZS9j/YXRhbG9nLzAwaXBo/b25lMTUvaXBob25l/LTE1LWZpbmlzaC1z/ZWxlY3QtMjAyMzA5/LTYtMWluY2gtYmxh/Y2sucG5n`
      - **Descrição:**
 
        ```html
